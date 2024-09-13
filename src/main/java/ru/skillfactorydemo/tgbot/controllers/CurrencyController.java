@@ -17,15 +17,15 @@ import java.util.List;
 //@Controller
 //@EnableAutoConfiguration
 public class CurrencyController {
-    private final CentralRussianBankService centralRussianBankService = new CentralRussianBankService();
+    private final CentralRussianBankService centralRussianBankService;
 
     @GetMapping("/getCurrencies")
     //@ResponseBody
     public List<ValuteCursOnDate> getValuteCursOnDate() throws Exception {
-        System.out.println("В переменной centralRussianBankService в контроллере вот такой маршаллер");
-        System.out.println(centralRussianBankService.getMarshaller());
-        System.out.println("хэш код сервиса");
-        System.out.println(centralRussianBankService.hashCode());
+//        System.out.println("В переменной centralRussianBankService в контроллере вот такой маршаллер");
+//        System.out.println(centralRussianBankService.getMarshaller());
+//        System.out.println("хэш код сервиса");
+//        System.out.println(centralRussianBankService.hashCode());
         return centralRussianBankService.getCurrenciesFromCbr();
     }
 
@@ -35,14 +35,14 @@ public class CurrencyController {
         return "Hello";
     }
 
-    @GetMapping("/getTestList")
-    @ResponseBody
-    public List <ValuteCursOnDate> getTestList() throws Exception {
-        List <ValuteCursOnDate> strList = new ArrayList<ValuteCursOnDate>();
-        strList.add(new ValuteCursOnDate("RUB", 0.56));
-        strList.add(new ValuteCursOnDate("EUR", 7.93));
-        strList.add(new ValuteCursOnDate("USD", 31.5));
-        strList.add(new ValuteCursOnDate("TUR", 10.6));
-        return strList;
-    }
+//    @GetMapping("/getTestList")
+//    @ResponseBody
+//    public List <ValuteCursOnDate> getTestList() throws Exception {
+//        List <ValuteCursOnDate> strList = new ArrayList<ValuteCursOnDate>();
+//        strList.add(new ValuteCursOnDate("RUB", 0.56));
+//        strList.add(new ValuteCursOnDate("EUR", 7.93));
+//        strList.add(new ValuteCursOnDate("USD", 31.5));
+//        strList.add(new ValuteCursOnDate("TUR", 10.6));
+//        return strList;
+//    }
 }

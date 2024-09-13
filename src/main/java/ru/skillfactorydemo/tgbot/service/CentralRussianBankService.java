@@ -1,6 +1,6 @@
 package ru.skillfactorydemo.tgbot.service;
 
-import lombok.Value;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ws.client.core.WebServiceTemplate;
 import ru.skillfactorydemo.tgbot.DTO.GetCursOnDateXml;
 import ru.skillfactorydemo.tgbot.DTO.GetCursOnDateXmlResponse;
@@ -17,19 +17,21 @@ import java.util.List;
 //Данный класс наследуется от WebServiceTemplate, который предоставляет удобный способ взаимодействия с SOAP веб сервисами
 public class CentralRussianBankService extends WebServiceTemplate {
     //Тут случается некоторая магия Spring и в момент запуска вашего приложения, сюда поставляется значение из application.properties или application.yml
-//    @Value("${cbr.api.url}")
-//    private String cbrApiUrl;
+    @Value("${cbr.api.url}")
     //@Value("http://www.cbr.ru/dailyinfowebserv/dailyinfo.asmx?wsdl")
-    private final String cbrApiUrl = "http://www.cbr.ru/dailyinfowebserv/dailyinfo.asmx?wsdl";
+    private String cbrApiUrl;
 
     public List<ValuteCursOnDate> getCurrenciesFromCbr() throws DatatypeConfigurationException {
+        //cbrApiUrl = "http://www.cbr.ru/dailyinfowebserv/dailyinfo.asmx?wsdl";
         final GetCursOnDateXml getCursOnDateXML = new GetCursOnDateXml();
         GregorianCalendar cal = new GregorianCalendar();
         cal.setTime(new Date());
 
         XMLGregorianCalendar xmlGregCal = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal);
         getCursOnDateXML.setOnDate(xmlGregCal);
-        System.out.println(this.getMarshaller());
+//        System.out.println(this.getMarshaller());
+//
+//        System.out.println("cbrApiUrl = " + cbrApiUrl);
 
         GetCursOnDateXmlResponse response = (GetCursOnDateXmlResponse) marshalSendAndReceive(cbrApiUrl, getCursOnDateXML);
 

@@ -34,11 +34,11 @@ public class AppConfig {
 
         cbrService.setMarshaller(jaxb2Marshaller);
         cbrService.setUnmarshaller(jaxb2Marshaller);
-        System.out.println("установлен маршаллер ");
-
-        System.out.println(jaxb2Marshaller);
-        System.out.println("хэш код сервиса");
-        System.out.println(cbrService.hashCode());
+//        System.out.println("установлен маршаллер ");
+//
+//        System.out.println(jaxb2Marshaller);
+//        System.out.println("хэш код сервиса");
+//        System.out.println(cbrService.hashCode());
         return cbrService;
     }
 

@@ -15,8 +15,8 @@ public class GetCursOnDateXml {
     @XmlElement(name = "On_date", required = true, namespace = "http://web.cbr.ru/") //Указание на то, в каком теге XML должно быть данное поле
     protected XMLGregorianCalendar onDate;
 
-    public GetCursOnDateXml setOnDate(XMLGregorianCalendar onDate) {
-        this.onDate = onDate;
-        return this;
-    }
+//    public GetCursOnDateXml setOnDate(XMLGregorianCalendar onDate) {
+//        this.onDate = onDate;
+//        return this;
+//    }
 }

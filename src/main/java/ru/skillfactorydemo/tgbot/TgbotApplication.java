@@ -2,6 +2,7 @@ package ru.skillfactorydemo.tgbot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import ru.skillfactorydemo.tgbot.DTO.GetCursOnDateXml;
 import ru.skillfactorydemo.tgbot.DTO.GetCursOnDateXmlResponse;
 
