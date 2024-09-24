@@ -1,14 +1,18 @@
 package ru.skillfactorydemo.tgbot.controllers;
 
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import ru.skillfactorydemo.tgbot.DTO.ValuteCursOnDate;
 import ru.skillfactorydemo.tgbot.service.CentralRussianBankService;
+import ru.skillfactorydemo.tgbot.service.StatService;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +22,8 @@ import java.util.List;
 //@EnableAutoConfiguration
 public class CurrencyController {
     private final CentralRussianBankService centralRussianBankService;
+
+    private final StatService statService;
 
     @GetMapping("/getCurrencies")
     //@ResponseBody
@@ -29,10 +35,21 @@ public class CurrencyController {
         return centralRussianBankService.getCurrenciesFromCbr();
     }
 
-    @GetMapping("/getCurrencies2")
-    @ResponseBody
-    public String getValuteCursOnDate2() throws Exception {
-        return "Hello";
+//    @GetMapping("/getCurrencies2")
+//    @ResponseBody
+//    public String getValuteCursOnDate2() throws Exception {
+//        return "Hello";
+//    }
+
+    @GetMapping("/getStats")
+    @ApiOperation("Количество пополнений, которые превышают определнную сумму")
+    public int getStatsAboutIncomesThatGreater(@RequestParam (value = "amount") BigDecimal amount) throws Exception {
+        return statService.getCountIncomesThatGreater(amount);
+    }
+    @GetMapping("/getStatsSpend")
+    @ApiOperation("Количество трат, которые превышают определнную сумму")
+    public int getStatsAboutSpendsThatGreater(@RequestParam (value = "amount") BigDecimal amount) throws Exception {
+        return statService.getCountSpendsThatGreater(amount);
     }
 
 //    @GetMapping("/getTestList")
