@@ -1,0 +1,24 @@
+2024-09-25 12:34:17.005191+04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "ACTIVE_CHAT" уже существует
+Table "ACTIVE_CHAT" already exists; SQL statement:
+CREATE TABLE ACTIVE_CHAT ( ID SERIAL PRIMARY KEY NOT NULL, CHAT_ID INTEGER NOT NULL ) [42101-232]
+2024-09-25 12:34:18.051126+04:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "ACTIVE_CHAT" уже существует
+Table "ACTIVE_CHAT" already exists; SQL statement:
+CREATE TABLE ACTIVE_CHAT ( ID SERIAL PRIMARY KEY NOT NULL, CHAT_ID INTEGER NOT NULL ) [42101-232]
+2024-09-25 12:36:35.092332+04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "ACTIVE_CHAT" уже существует
+Table "ACTIVE_CHAT" already exists; SQL statement:
+CREATE TABLE ACTIVE_CHAT ( ID SERIAL PRIMARY KEY NOT NULL, CHAT_ID INTEGER NOT NULL ) [42101-232]
+2024-09-25 12:36:38.594623+04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "ACTIVE_CHAT" уже существует
+Table "ACTIVE_CHAT" already exists; SQL statement:
+CREATE TABLE ACTIVE_CHAT ( ID SERIAL PRIMARY KEY NOT NULL, CHAT_ID INTEGER NOT NULL ) [42101-232]
+2024-09-25 12:36:39.244109+04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "ACTIVE_CHAT" уже существует
+Table "ACTIVE_CHAT" already exists; SQL statement:
+CREATE TABLE ACTIVE_CHAT ( ID SERIAL PRIMARY KEY NOT NULL, CHAT_ID INTEGER NOT NULL ) [42101-232]
+2024-09-25 12:36:39.714706+04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "ACTIVE_CHAT" уже существует
+Table "ACTIVE_CHAT" already exists; SQL statement:
+CREATE TABLE ACTIVE_CHAT ( ID SERIAL PRIMARY KEY NOT NULL, CHAT_ID INTEGER NOT NULL ) [42101-232]
